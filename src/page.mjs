@@ -49,9 +49,15 @@ function head({ lang, t, config, assets, path, title, description, noindex = fal
   };
   const ldJson = JSON.stringify(ld).replace(/</g, "\\u003c");
 
+  const ga = config.gaId
+    ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${esc(config.gaId)}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${config.gaId}');</script>`
+    : "";
+
   return `<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+${ga}
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${url}">\n${alternates}`}

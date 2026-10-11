@@ -16,4 +16,8 @@ export default {
   phone: process.env.CONTACT_PHONE || "",   // e.g. "+1 407 555 0100"
   email: process.env.CONTACT_EMAIL || "",   // e.g. "hello@jrsol.net"
   city: "Orlando, FL",
+
+  // Google Analytics (GA4) measurement ID. Public by design (ships in page
+  // HTML), so it's safe to commit. Leave empty ("") to omit analytics.
+  gaId: process.env.GA_MEASUREMENT_ID || "G-VZ5QNH9WHX",
 };
