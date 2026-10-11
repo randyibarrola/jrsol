@@ -4,3 +4,11 @@
 name = "jrsol"
 pages_build_output_dir = "dist"
 compatibility_date = "2025-01-01"
+
+# Plaintext vars only. These are read at BUILD time (site.config.mjs), so
+# they must live here, not as dashboard Secrets (which only exist at
+# request/runtime, not during the build step). Nothing sensitive: SITE_URL
+# is public, and CONTACT_PHONE/CONTACT_EMAIL are only ever set to values
+# meant to be shown on the page itself.
+[vars]
+SITE_URL = "https://www.jrsol.net"
