@@ -1,0 +1,6 @@
+# Tells Cloudflare's Workers Builds / `wrangler deploy` to deploy this as a
+# Pages-style static site (dist/) with Pages Functions (functions/), instead
+# of trying to deploy it as a plain Worker.
+name = "jrsol"
+pages_build_output_dir = "dist"
+compatibility_date = "2025-01-01"
